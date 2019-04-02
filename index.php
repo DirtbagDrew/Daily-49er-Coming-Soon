@@ -3,7 +3,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      if($_POST['email']!=""){
         $data = $_POST['email'];
         $data .= "; ";
-        $ret = file_put_contents('file.txt', $data, FILE_APPEND | LOCK_EX);
+        $ret = file_put_contents('emails.txt', $data, FILE_APPEND | LOCK_EX);
         if($ret === false) {
             die('There was an error writing this file');
         }
